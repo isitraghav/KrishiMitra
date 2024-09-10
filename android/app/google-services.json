@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "709169373788",
+    "project_id": "farmingapp-hackathon",
+    "storage_bucket": "farmingapp-hackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709169373788:android:83fd9e81eb96299b283c99",
+        "android_client_info": {
+          "package_name": "io.framework7.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbeHdZe8QEX9rYICx7Ltnqxpf86xcxMEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

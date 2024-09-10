@@ -1,0 +1,25 @@
+{
+  "cwd": "C:\\Users\\Raghav\\Desktop\\KrishiMitra",
+  "type": [
+    "capacitor",
+    "web"
+  ],
+  "name": "KrishiMitra",
+  "framework": "svelte",
+  "template": "single-view",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": true,
+    "color": "#007aff",
+    "darkMode": false,
+    "iconFonts": true
+  },
+  "customBuild": false,
+  "pkg": "io.framework7.myapp",
+  "capacitor": {
+    "platforms": [
+      "android"
+    ]
+  }
+}
