@@ -10,16 +10,9 @@
     Input,
     Icon,
     NavTitleLarge,
-    List,
-    ListInput,
-    LoginScreen,
-    LoginScreenTitle,
-    ListButton,
-    BlockFooter,
   } from "framework7-svelte";
   import { onMount } from "svelte";
   import { Client } from "@gradio/client";
-  import { writable } from "svelte/store";
 
   let pickerDevice,
     soiltypepicker,
@@ -94,8 +87,6 @@
 
   let fertilizer_amount = [];
 
-  import { FirebaseFirestore } from "@capacitor-firebase/firestore";
-
   async function submitData() {
     loading = true;
     let data = {
@@ -125,15 +116,6 @@
           { name: ent[0], amount: ent[1] },
         ];
       });
-      await axios.get("https://ipapi.co/json/").then(async (res) => {
-        console.log(res.data.latitude, res.data.longitude);
-
-        await FirebaseFirestore.addDocument({
-          reference:
-            "users/" + res.data.latitude + "&" + res.data.longitude + "/data",
-          data: { data: data, res: response, geo: res.data },
-        });
-      });
     }
     result = true;
     loading = false;
@@ -148,25 +130,6 @@
     Sandy: 6.8,
     "Black Sandy": 7.2,
   };
-
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "firebase/app";
-  import axios from "axios";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCLKBJYg_K1O1TMf_qjF-7PQWDDAZfNE_8",
-    authDomain: "farmingapp-hackathon.firebaseapp.com",
-    projectId: "farmingapp-hackathon",
-    storageBucket: "farmingapp-hackathon.appspot.com",
-    messagingSenderId: "709169373788",
-    appId: "1:709169373788:web:94255a1ab1e66f70283c99",
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
 </script>
 
 <Page name="home">
@@ -286,7 +249,11 @@
       <Icon f7="rays" />
     </p>
     <div class="flex justify-center">
-      <p>{["Calculating...", "Checking data...", "Loading..."][Math.floor(Date.now() / 1000) % 3]}</p>
+      <p>
+        {["Calculating...", "Checking data...", "Loading..."][
+          Math.floor(Date.now() / 1000) % 3
+        ]}
+      </p>
     </div>
   {/if}
 </Page>
